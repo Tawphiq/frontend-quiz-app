@@ -1,9 +1,23 @@
-function App() {
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import Quiz from './pages/Quiz';
+import { QuizProvider } from './context/QuizContext';
+import './index.css'; // Ensure Tailwind CSS is imported
+
+const App: React.FC = () => {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-  )
-}
+    <QuizProvider>
+      <Router>
+        <div className="app">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/quiz/:subject" element={<Quiz />} />
+          </Routes>
+        </div>
+      </Router>
+    </QuizProvider>
+  );
+};
 
 export default App;
