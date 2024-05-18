@@ -1,15 +1,18 @@
 /* eslint-disable react-refresh/only-export-components */
-// src/context/ThemeContext.tsx
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 
 interface ThemeContextType {
   theme: 'light' | 'dark';
   toggleTheme: () => void;
 }
 
+interface ThemeProviderProps {
+  children: ReactNode;
+}
+
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-export const ThemeProvider: React.FC = ({ children }) => {
+export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   useEffect(() => {
@@ -41,3 +44,4 @@ export const useTheme = () => {
   }
   return context;
 };
+
