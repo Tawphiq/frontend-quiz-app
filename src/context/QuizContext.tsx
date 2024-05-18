@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 // src/context/QuizContext.tsx
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 import quizzes from '../data/data.json';
