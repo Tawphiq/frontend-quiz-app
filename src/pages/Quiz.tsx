@@ -86,7 +86,10 @@ export default Quiz;*/}
 
 // src/pages/Quiz.tsx
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useQuiz } from '../context/QuizContext';
+import ProgressBar from '../components/ProgressBar';
+
 
 const Quiz: React.FC = () => {
   const { currentQuiz, score, setScore } = useQuiz();
@@ -94,9 +97,10 @@ const Quiz: React.FC = () => {
   const [quizCompleted, setQuizCompleted] = useState(false);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [showError, setShowError] = useState(false);
-  const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [showAnswer, setShowAnswer] = useState(false);
   const [showNextButton, setShowNextButton] = useState(false);
+
+  const navigate = useNavigate()
 
   if (!currentQuiz) {
     return <div>No quiz selected.</div>;
@@ -115,9 +119,7 @@ const Quiz: React.FC = () => {
 
     if (selectedOption === questions[currentQuestionIndex].answer) {
       setScore(score + 1);
-      setIsCorrect(true);
-    } else {
-      setIsCorrect(false);
+     
     }
 
     setShowNextButton(true);
@@ -128,7 +130,6 @@ const Quiz: React.FC = () => {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
       setSelectedOption(null);
       setShowAnswer(false);
-      setIsCorrect(null);
       setShowNextButton(false);
     } else {
       setQuizCompleted(true);
@@ -140,15 +141,16 @@ const Quiz: React.FC = () => {
     setQuizCompleted(false);
     setScore(0);
     setSelectedOption(null);
-    setIsCorrect(null);
     setShowAnswer(false);
     setShowNextButton(false);
+    navigate('/')
   };
 
   return (
     <div className="p-4 max-w-2xl mx-auto">
       {!quizCompleted ? (
         <div>
+        <ProgressBar totalQuestions={questions.length} currentQuestionIndex={currentQuestionIndex} />
           <h2 className="text-xl md:text-2xl font-bold mb-4 text-center">{questions[currentQuestionIndex].question}</h2>
           <div className="flex flex-col items-start">
             {questions[currentQuestionIndex].options.map((option, index) => (
@@ -187,13 +189,6 @@ const Quiz: React.FC = () => {
             </button>
           ) : (
             <>
-              {isCorrect ? (
-                <div className="mt-4 text-green-500">Correct!</div>
-              ) : (
-                <div className="mt-4 text-red-500">
-                  Incorrect! The correct answer is: {questions[currentQuestionIndex].answer}
-                </div>
-              )}
               {showNextButton && (
                 <button onClick={handleNextQuestion} className="mt-4 p-2 bg-blue-500 text-white rounded w-full md:w-auto">
                   Next Question
