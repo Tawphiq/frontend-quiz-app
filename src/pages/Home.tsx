@@ -13,9 +13,9 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Select a Quiz</h1>
-      <div className="grid grid-cols-2 gap-4">
+    <div className="grid md:grid-cols-2 p-4">
+      <div className="text-2xl font-bold mb-4 dark:text-yellow-500">Welcome to the Frontend Quiz! Pick a subject to get started</div>
+      <div className="grid gap-4">
         {quizzes.map((quiz) => (
           <button
             key={quiz.title}
