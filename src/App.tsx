@@ -4,9 +4,10 @@ import Home from './pages/Home';
 import Quiz from './pages/Quiz';
 import { QuizProvider } from './context/QuizContext';
 import { useTheme } from './context/ThemeContext';
+import Header from './components/Header';
 
 const App: React.FC = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme} = useTheme();
 
   const backgroundClass = () => {
     if (theme === 'dark') {
@@ -19,14 +20,7 @@ const App: React.FC = () => {
     <QuizProvider>
       <Router>
         <div className={`min-h-screen bg-cover bg-center ${backgroundClass()}`}>
-          <header className="p-4 grid justify-end">
-           <button
-              onClick={toggleTheme}
-              className="p-2 bg-gray-200 dark:bg-gray-700 rounded"
-            >
-              {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
-            </button>
-          </header>
+          <Header />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/quiz" element={<Quiz />} />

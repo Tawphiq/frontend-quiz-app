@@ -13,14 +13,14 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className="grid md:grid-cols-2 p-4">
+    <div className="grid md:grid-cols-2 p-8">
       <div className="text-2xl font-bold mb-4 dark:text-yellow-500">Welcome to the Frontend Quiz! Pick a subject to get started</div>
       <div className="grid gap-4">
         {quizzes.map((quiz) => (
           <button
             key={quiz.title}
             onClick={() => handleSelect(quiz.title)}
-            className="flex items-center justify-center p-4 border rounded hover:bg-gray-200"
+            className="flex items-center justify-center p-4 border rounded-md bg-white dark:bg-darkbutton shadow"
           >
             <img src={quiz.icon} alt={quiz.title} className="w-12 h-12 mr-2" />
             <span>{quiz.title}</span>

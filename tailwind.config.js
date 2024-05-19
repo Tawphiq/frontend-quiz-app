@@ -17,7 +17,8 @@ export default {
       },
       colors: {
         lightbg: "#F4F6FA",
-        darkbg: "#313E51"
+        darkbg: "#313E51",
+        darkbutton: "#3B4D66"
       }
     },
   },
