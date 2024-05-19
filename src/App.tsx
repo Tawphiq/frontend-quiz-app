@@ -19,7 +19,7 @@ const App: React.FC = () => {
   return (
     <QuizProvider>
       <Router>
-        <div className={`min-h-screen bg-cover bg-center ${backgroundClass()}`}>
+        <div className={`min-h-screen bg-cover bg-center font-rubik ${backgroundClass()}`}>
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />

@@ -21,6 +21,9 @@ export default {
         darkbutton: "#3B4D66"
       }
     },
+    fontFamily: {
+      rubik:["Rubik", "Nunito"]
+    },
   },
   plugins: [],
 }

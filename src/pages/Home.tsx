@@ -13,16 +13,22 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className="grid md:grid-cols-2 p-8">
-      <div className="text-2xl font-bold mb-4 dark:text-yellow-500">Welcome to the Frontend Quiz! Pick a subject to get started</div>
+    <div className="grid lg:grid-cols-2 p-8 md:p-20 lg:px-40">
+      <div className="text-2xl font-bold mb-4 p-4 dark:text-white">
+        <p>Welcome to the</p>
+        <p>Frontend Quiz!</p>
+        <p>Pick a subject to get started</p>
+      </div>
       <div className="grid gap-4">
         {quizzes.map((quiz) => (
           <button
             key={quiz.title}
             onClick={() => handleSelect(quiz.title)}
-            className="flex items-center justify-center p-4 border rounded-md bg-white dark:bg-darkbutton shadow"
+            className="flex items-center p-4  rounded-2xl bg-white dark:bg-darkbutton shadow"
           >
-            <img src={quiz.icon} alt={quiz.title} className="w-12 h-12 mr-2" />
+            <div className={`w-12 h-12 grid justify-center items-center rounded-lg mr-2 $`}>
+            <img src={quiz.icon} alt={quiz.title} className="w-6 h-6" />
+            </div>
             <span>{quiz.title}</span>
           </button>
         ))}
