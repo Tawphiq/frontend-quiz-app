@@ -20,7 +20,8 @@ export default {
         darkbg: "#313E51",
         dark: "#3B4D66",
         darkthin: "#626C7F",
-        thinlight: "#ABC1E1"
+        thinlight: "#ABC1E1",
+        purple:"#A729F5"
 
       }
     },

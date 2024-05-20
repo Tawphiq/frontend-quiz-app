@@ -1,21 +1,13 @@
+// src/components/Header.tsx
 import React from 'react';
-import { useTheme } from '../context/ThemeContext';
-
+import ThemeToggle from './ThemeToggle';
 
 const Header: React.FC = () => {
-    const { theme, toggleTheme } = useTheme();
-    return(
-        <header className="p-4 grid justify-end">
-           <button
-              onClick={toggleTheme}
-              className="p-2 bg-gray-200 dark:bg-gray-700 rounded"
-            >
-              {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
-            </button>
-          </header>
-    )
-
-}
-
+  return (
+    <header className="flex justify-end items-center p-5 md:p-10">
+      <ThemeToggle />
+    </header>
+  );
+};
 
 export default Header;
