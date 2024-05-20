@@ -12,24 +12,25 @@ const Home: React.FC = () => {
     navigate('/quiz');
   };
 
+
   return (
     <div className="grid lg:grid-cols-2 p-8 md:p-20 lg:px-40">
-      <div className="text-2xl font-bold mb-4 p-4 dark:text-white">
-        <p>Welcome to the</p>
-        <p>Frontend Quiz!</p>
-        <p>Pick a subject to get started</p>
+      <div className="text-2xl font-bold mb-4 p-4 text-dark dark:text-white">
+        <p className='font-thin text-4xl md:text-6xl lg:text-5xl'>Welcome to the</p>
+        <p className='font-bold text-4xl md:text-6xl lg:text-5xl mb-2 md:mb-5 lg:mb-10'>Frontend Quiz!</p>
+        <i className='font-thin text-sm md:text-2xl text-darkthin dark:text-thinlight'>Pick a subject to get started</i>
       </div>
-      <div className="grid gap-4">
+      <div className="grid gap-4 md:mt-10 lg:mt-0">
         {quizzes.map((quiz) => (
           <button
             key={quiz.title}
             onClick={() => handleSelect(quiz.title)}
-            className="flex items-center p-4  rounded-2xl bg-white dark:bg-darkbutton shadow"
+            className="flex items-center p-4 rounded-2xl bg-white dark:bg-dark shadow"
           >
-            <div className={`w-12 h-12 grid justify-center items-center rounded-lg mr-2 $`}>
+            <div className={`md:w-12 md:h-12 grid justify-center items-center ${quiz.iconbg} rounded-lg mr-2`}>
             <img src={quiz.icon} alt={quiz.title} className="w-6 h-6" />
             </div>
-            <span>{quiz.title}</span>
+            <span className='font-bold text-dark dark:text-white'>{quiz.title}</span>
           </button>
         ))}
       </div>

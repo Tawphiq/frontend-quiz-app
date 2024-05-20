@@ -18,7 +18,10 @@ export default {
       colors: {
         lightbg: "#F4F6FA",
         darkbg: "#313E51",
-        darkbutton: "#3B4D66"
+        dark: "#3B4D66",
+        darkthin: "#626C7F",
+        thinlight: "#ABC1E1"
+
       }
     },
     fontFamily: {
