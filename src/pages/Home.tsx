@@ -2,7 +2,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useQuiz } from '../context/QuizContext';
-import SubjectCard from '../components/SubjectCard';
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -13,6 +12,7 @@ const Home: React.FC = () => {
     navigate('/quiz');
   };
 
+
   return (
     <div className="grid lg:grid-cols-2 p-8 md:p-20 lg:px-40">
       <div className="text-2xl font-bold mb-4 p-4 text-dark dark:text-white">
@@ -22,13 +22,16 @@ const Home: React.FC = () => {
       </div>
       <div className="grid gap-4 md:mt-10 lg:mt-0">
         {quizzes.map((quiz) => (
-          <SubjectCard
+          <button
             key={quiz.title}
-            title={quiz.title}
-            icon={quiz.icon}
-            iconbg={quiz.iconbg}
-            onSelect={handleSelect}
-          />
+            onClick={() => handleSelect(quiz.title)}
+            className="flex items-center p-4 rounded-2xl bg-white dark:bg-dark shadow"
+          >
+            <div className={`md:w-12 md:h-12 grid justify-center items-center ${quiz.iconbg} rounded-lg mr-2`}>
+            <img src={quiz.icon} alt={quiz.title} className="w-6 h-6" />
+            </div>
+            <span className='font-bold text-dark dark:text-white'>{quiz.title}</span>
+          </button>
         ))}
       </div>
     </div>
@@ -36,4 +39,5 @@ const Home: React.FC = () => {
 };
 
 export default Home;
+
 
