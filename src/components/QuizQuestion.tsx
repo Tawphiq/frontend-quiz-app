@@ -38,7 +38,7 @@ const QuizQuestion: React.FC<QuizQuestionProps> = ({ question, options, correctA
         </div>
       ))}
       {showError && <div className="text-red-500">Please select an option.</div>}
-      <button onClick={handleSubmit} className="mt-4 p-2 bg-blue-500 text-white rounded">
+      <button onClick={handleSubmit} className="mt-4 p-2 bg-purple text-white rounded">
         Submit Answer
       </button>
     </div>
