@@ -114,19 +114,19 @@ const Quiz: React.FC = () => {
             </div>
             
             {!showAnswer ? (
-              <button onClick={handleAnswer} className="mt-4 p-2 bg-purple text-white rounded w-full md:w-auto">
+              <button onClick={handleAnswer} className="mt-4 p-2 bg-purple text-white rounded w-full ">
                 Submit Answer
               </button>
             ) : (
               <>
                 {showNextButton && (
-                  <button onClick={handleNextQuestion} className="mt-4 p-2 bg-purple text-white rounded w-full md:w-auto">
+                  <button onClick={handleNextQuestion} className="mt-4 p-2 bg-purple text-white rounded w-full ">
                     Next Question
                   </button>
                 )}
               </>
             )}
-            {showError && <div className="text-red-500 text-2xl w-full">Please select an option <span><img src={errorIcon} alt="" className="inline-block" /></span></div>}
+            {showError &&  <div className="text-red-500 text-2xl w-full mt-4 flex justify-center items-center"><img src={errorIcon} alt="" className="inline-block align-middle" />Please select an option</div>}
           </div>
         </div>
       ) : (
