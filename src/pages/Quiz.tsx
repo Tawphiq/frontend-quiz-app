@@ -207,14 +207,14 @@ const Quiz: React.FC = () => {
   };
 
   return (
-    <div className="p-4 max-w-5xl mx-auto">
+    <div className="p-8 md:p-20 lg:px-40 max-w-5xlmx-auto">
       {!quizCompleted ? (
-        <div className="lg:flex lg:gap-8">
+        <div className="lg:flex lg:gap-20">
           <div className="lg:w-1/2">
-            <h2 className="text-xl md:text-2xl font-bold mb-4 text-center lg:text-left">
+            <i className="mb-4 text-center lg:text-left font-thin text-sm md:text-2xl text-darkthin dark:text-thinlight">
               Question {currentQuestionIndex + 1} of {questions.length}
-            </h2>
-            <h3 className="text-lg md:text-xl font-semibold mb-4 text-center lg:text-left">
+            </i>
+            <h3 className="text-start text-lg md:text-xl font-semibold mb-4 lg:mb-20 lg:text-left">
               {questions[currentQuestionIndex].question}
             </h3>
             <ProgressBar totalQuestions={questions.length} currentQuestionIndex={currentQuestionIndex} />
@@ -222,7 +222,7 @@ const Quiz: React.FC = () => {
           <div className="lg:w-1/2">
             <div className="flex flex-col items-start">
               {questions[currentQuestionIndex].options.map((option, index) => {
-                const label = String.fromCharCode(65 + index); // Convert index to letter (A, B, C, ...)
+                const label = String.fromCharCode(65 + index); // Converting index to letter (A, B, C, ...)
                 const isCorrect = showAnswer && option === questions[currentQuestionIndex].answer;
                 const isSelected = selectedOption === option;
                 const isSelectedAndIncorrect = showAnswer && isSelected && !isCorrect;
@@ -230,21 +230,21 @@ const Quiz: React.FC = () => {
                   <button
                     key={index}
                     onClick={() => !showAnswer && setSelectedOption(option)}
-                    className={`p-2 border rounded w-full text-left mb-2 flex justify-between items-center ${
+                    className={`p-4 rounded-2xl shadow bg-white dark:bg-dark md:text-2xl text-dark dark:text-white w-full text-left mb-2 flex justify-between items-center ${
                       showAnswer
                         ? isCorrect
-                          ? 'border-green-500'
+                          ? 'border-green-500 border-2'
                           : isSelectedAndIncorrect
-                          ? 'border-red-500'
+                          ? 'border-red-500 border-2'
                           : 'border-gray-300'
                         : isSelected
-                        ? 'bg-blue-500 text-white'
+                        ? 'border-purple border-2 dark:text-white'
                         : 'border-gray-300'
                     }`}
                     disabled={showAnswer}
                   >
                     <span>
-                      <span className="mr-2 bg-gray-200 px-4 py-1">{label}</span> {option}
+                      <span className="mr-2 bg-gray-200px-4py-1">{label}</span> {option}
                     </span>
                     {showAnswer && (
                       <>
@@ -269,13 +269,13 @@ const Quiz: React.FC = () => {
               })}
             </div>
             {!showAnswer ? (
-              <button onClick={handleAnswer} className="mt-4 p-2 bg-purple text-white rounded w-full">
+              <button onClick={handleAnswer} className="mt-4 p-2 bg-purple text-white md:text-2xl rounded-2xl w-full">
                 Submit Answer
               </button>
             ) : (
               <>
                 {showNextButton && (
-                  <button onClick={handleNextQuestion} className="mt-4 p-2 bg-purple text-white rounded w-full">
+                  <button onClick={handleNextQuestion} className="mt-4 p-2 bg-purple md:text-2xl text-white rounded-2xl w-full">
                     Next Question
                   </button>
                 )}
@@ -293,7 +293,7 @@ const Quiz: React.FC = () => {
         <div className="text-center">
           <h2 className="text-xl md:text-2xl font-bold mb-4">Quiz Completed</h2>
           <p>Your score: {score} / {questions.length}</p>
-          <button onClick={handlePlayAgain} className="mt-4 p-2 bg-blue-500 text-white rounded w-full md:w-auto">
+          <button onClick={handlePlayAgain} className="mt-4 p-2 bg-purple text-white rounded w-full md:w-auto">
             Play Again
           </button>
         </div>
