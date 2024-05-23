@@ -112,7 +112,7 @@ const Quiz: React.FC = () => {
                 );
               })}
             </div>
-            {showError && <div className="text-red-500 border-2 w-full">Please select an option <span><img src={errorIcon} alt="" /></span></div>}
+            
             {!showAnswer ? (
               <button onClick={handleAnswer} className="mt-4 p-2 bg-purple text-white rounded w-full md:w-auto">
                 Submit Answer
@@ -126,6 +126,7 @@ const Quiz: React.FC = () => {
                 )}
               </>
             )}
+            {showError && <div className="text-red-500 text-2xl w-full">Please select an option <span><img src={errorIcon} alt="" className="inline-block" /></span></div>}
           </div>
         </div>
       ) : (
