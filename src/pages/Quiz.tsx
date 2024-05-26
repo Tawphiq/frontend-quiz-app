@@ -85,7 +85,7 @@ const Quiz: React.FC = () => {
                   <button
                     key={index}
                     onClick={() => !showAnswer && setSelectedOption(option)}
-                    className={`p-4 rounded-2xl shadow bg-white dark:bg-dark md:text-xl font-semibold text-dark dark:text-white w-full text-left mb-2 flex justify-between items-center ${
+                    className={`p-4 h-20 rounded-2xl shadow bg-white dark:bg-dark md:text-xl font-semibold text-dark dark:text-white w-full text-left mb-2 flex justify-between items-center ${
                       showAnswer
                         ? isCorrect
                           ? 'border-green-500 border-2'
@@ -98,8 +98,8 @@ const Quiz: React.FC = () => {
                     }`}
                     disabled={showAnswer}
                   >
-                    <span className='border-4border-yellow-500 p-2'>
-                      <span className="mr-2 bg-gray-200 py-1 px-2">{label}</span> {option}
+                    <span className='border-2border-yellow-500 flex p-2'>
+                      <span className="mr-5 text-3xl bg-gray-100 flex lg:justify-center items-center rounded-lg lg:w-14 px-2 dark:text-dark">{label}</span> {option}
                     </span>
                     {showAnswer && (
                       <>
@@ -124,7 +124,7 @@ const Quiz: React.FC = () => {
               })}
             </div>
             {!showAnswer ? (
-              <button onClick={handleAnswer} className="mt-4 p-2 bg-purple text-white md:text-2xl rounded-2xl w-full">
+              <button onClick={handleAnswer} className="mt-4 h-16 p-2 bg-purple text-white md:text-2xl rounded-2xl w-full">
                 Submit Answer
               </button>
             ) : (
