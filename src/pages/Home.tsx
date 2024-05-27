@@ -27,7 +27,7 @@ const Home: React.FC = () => {
             onClick={() => handleSelect(quiz.title)}
             className="flex items-center lg:text-2xl p-4 rounded-2xl bg-white dark:bg-dark shadow"
           >
-            <div className={`md:w-12 md:h-12 grid justify-center items-center rounded-lg mr-2 ${
+            <div className={`md:w-12 md:h-12 p-1 grid justify-center items-center rounded-lg mr-2 ${
               quiz.title === "HTML"?'bg-orange-100'
               : quiz.title === "CSS"? 'bg-green-100'
               : quiz.title === "JavaScript"?'bg-blue-100'
