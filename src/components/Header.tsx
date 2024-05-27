@@ -17,7 +17,7 @@ const Header: React.FC = () => {
       <div className="flex items-center">
         {currentQuiz && (
           <div className="flex items-center">
-            <div className={`w-8 h-8 md:w-12 md:h-12 grid justify-center items-center ${currentQuiz.iconbg} rounded-lg`}>
+            <div className={`w-8 h-8 md:w-12 md:h-12 grid justify-center items-center ${currentQuiz.icon} rounded-lg`}>
               <img src={currentQuiz.icon} alt={currentQuiz.title} className="w-8 h-8" />
             </div>
             <span className="font-bold text-dark dark:text-white text-xl md:text-2xl ml-2">{currentQuiz.title}</span>

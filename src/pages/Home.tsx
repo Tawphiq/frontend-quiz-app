@@ -25,9 +25,14 @@ const Home: React.FC = () => {
           <button
             key={quiz.title}
             onClick={() => handleSelect(quiz.title)}
-            className="flex items-center p-4 rounded-2xl bg-white dark:bg-dark shadow"
+            className="flex items-center lg:text-2xl p-4 rounded-2xl bg-white dark:bg-dark shadow"
           >
-            <div className={`md:w-12 md:h-12 grid justify-center items-center ${quiz.iconbg} rounded-lg mr-2`}>
+            <div className={`md:w-12 md:h-12 grid justify-center items-center rounded-lg mr-2 ${
+              quiz.title === "HTML"?'bg-orange-100'
+              : quiz.title === "CSS"? 'bg-green-100'
+              : quiz.title === "JavaScript"?'bg-blue-100'
+              : 'bg-fuchsia-100'
+              } `}>
             <img src={quiz.icon} alt={quiz.title} className="w-6 h-6" />
             </div>
             <span className='font-bold text-dark dark:text-white'>{quiz.title}</span>

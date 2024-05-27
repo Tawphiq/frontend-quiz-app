@@ -13,7 +13,7 @@ interface Quiz {
   title: string;
   icon: string;
   questions: Question[];
-  iconbg: string;
+  iconBg: string;
 }
 
 interface QuizContextType {

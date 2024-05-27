@@ -124,13 +124,13 @@ const Quiz: React.FC = () => {
               })}
             </div>
             {!showAnswer ? (
-              <button onClick={handleAnswer} className="mt-4 h-16 p-2 bg-purple text-white md:text-2xl rounded-2xl w-full">
+              <button onClick={handleAnswer} className="mt-4 h-20 p-2 bg-purple text-white md:text-2xl rounded-2xl w-full">
                 Submit Answer
               </button>
             ) : (
               <>
                 {showNextButton && (
-                  <button onClick={handleNextQuestion} className="mt-4 p-2 bg-purple md:text-2xl text-white rounded-2xl w-full">
+                  <button onClick={handleNextQuestion} className="mt-4 h-20 p-2 bg-purple md:text-2xl text-white rounded-2xl w-full">
                     Next Question
                   </button>
                 )}
