@@ -85,7 +85,7 @@ const Quiz: React.FC = () => {
                   <button
                     key={index}
                     onClick={() => !showAnswer && setSelectedOption(option)}
-                    className={`p-4 h-20 rounded-2xl shadow bg-white dark:bg-dark md:text-xl font-semibold text-dark dark:text-white w-full text-left mb-2 flex justify-between items-center ${
+                    className={`p-4 h-20 rounded-2xl shadow bg-white dark:bg-dark md:text-xl font-semibold text-dark dark:text-white w-full text-left mb-2 flex items-center ${
                       showAnswer
                         ? isCorrect
                           ? 'border-green-500 border-2'
@@ -98,9 +98,8 @@ const Quiz: React.FC = () => {
                     }`}
                     disabled={showAnswer}
                   >
-                    <span className='border-2border-yellow-500 flex p-2'>
-                      <span className="mr-5 text-3xl bg-gray-100 flex lg:justify-center items-center rounded-lg lg:w-14 px-2 dark:text-dark">{label}</span> {option}
-                    </span>
+                    <div className='md:w-12 md:h-12 p-1 grid justify-center items-center bg-gray-100 dark:text-dark mr-5 text-3xl rounded-lg'>{label}</div>
+                    <span>{option}</span>
                     {showAnswer && (
                       <>
                         {isSelected && (
