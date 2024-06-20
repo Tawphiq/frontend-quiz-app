@@ -13,7 +13,7 @@ const Results: React.FC<ResultsProps> = ({ score, totalQuestions, handlePlayAgai
   return (
     <div className="text-center">
       <h2 className="text-xl md:text-2xl font-bold mb-4">Quiz Completed</h2>
-      <p>Your score: {score} / {totalQuestions}</p>
+      <p>Your score: {score} out of {totalQuestions}</p>
       <button onClick={handlePlayAgain} className="mt-4 p-2 bg-purple text-white rounded w-full md:w-auto">
         Play Again
       </button>
