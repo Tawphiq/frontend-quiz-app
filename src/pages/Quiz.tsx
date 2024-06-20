@@ -63,7 +63,7 @@
    };
 
    return (
-     <div className="p-8f md:p-20 lg:px-40g">
+     <div className="p-4 md:p-20">
        {!quizCompleted ? (
          <div className="lg:flex lg:gap-20">
            <div className="lg:w-1/2">

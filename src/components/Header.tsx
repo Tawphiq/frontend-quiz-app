@@ -13,7 +13,7 @@ const Header: React.FC = () => {
   const { currentQuiz } = useQuiz();
 
   return (
-    <header className="flex justify-between items-center p-5 md:p-10">
+    <header className="flex justify-between items-center p-5 md:py-8 md:px-20">
       <div className="flex items-center">
         {currentQuiz && (
           <div className="flex items-center">
