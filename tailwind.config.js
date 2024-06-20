@@ -21,7 +21,8 @@ export default {
         dark: "#3B4D66",
         darkthin: "#626C7F",
         thinlight: "#ABC1E1",
-        purple:"#A729F5"
+        purple:"#A729F5",
+        green:"#26D782"
 
       }
     },
