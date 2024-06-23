@@ -3,9 +3,9 @@
  import { useNavigate } from 'react-router-dom';
  import { useQuiz } from '../context/QuizContext';
  import ProgressBar from '../components/ProgressBar';
- import correctIcon from '../assets/images/icon-correct.svg';
- import incorrectIcon from '../assets/images/icon-incorrect.svg';
- import errorIcon from '../assets/images/icon-error.svg';
+ import correctIcon from '/assets/images/icon-correct.svg';
+ import incorrectIcon from '/assets/images/icon-incorrect.svg';
+ import errorIcon from '/assets/images/icon-error.svg';
  import Results from './Results';
 
  const Quiz: React.FC = () => {
@@ -91,7 +91,7 @@
                      className={`group p-4 h-20 rounded-2xl shadow bg-white dark:bg-dark md:text-xl font-semibold text-dark dark:text-white w-full text-left mb-2 flex items-center justify-between ${
                        showAnswer
                          ? isCorrect
-                           ? `${notSelectedButCorrect ? '' : 'border-green-500 border-2'}`
+                           ? `${notSelectedButCorrect ? '' : 'border-green border-2'}`
                            : isSelectedAndIncorrect
                            ? 'border-red-500 border-2'
                            : 'border-gray-300'
@@ -113,7 +113,7 @@
                              : ''
                          } ${
                           isCorrect
-                          ? `${notSelectedButCorrect? 'bg-gray-100': 'bg-green-500 text-white group-hover:bg-green-500 group-hover:text-white'}`
+                          ? `${notSelectedButCorrect? 'bg-gray-100': 'bg-green text-white group-hover:bg-green group-hover:text-white'}`
                           : ''
                          } md:w-12 md:h-12 p-1 grid justify-center items-center bg-lightbg text-darkthin dark:text-dark mr-5 text-3xl rounded-lg group-hover:bg-fuchsia-100 group-hover:text-purple`}
                        >
