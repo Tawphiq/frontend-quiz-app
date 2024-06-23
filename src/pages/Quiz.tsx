@@ -3,9 +3,9 @@
  import { useNavigate } from 'react-router-dom';
  import { useQuiz } from '../context/QuizContext';
  import ProgressBar from '../components/ProgressBar';
- import correctIcon from '/assets/images/icon-correct.svg';
- import incorrectIcon from '/assets/images/icon-incorrect.svg';
- import errorIcon from '/assets/images/icon-error.svg';
+ import correctIcon from '../assets/images/icon-correct.svg';
+ import incorrectIcon from '../assets/images/icon-incorrect.svg';
+ import errorIcon from '../assets/images/icon-error.svg';
  import Results from './Results';
 
  const Quiz: React.FC = () => {

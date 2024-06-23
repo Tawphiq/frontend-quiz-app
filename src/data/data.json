@@ -109,7 +109,7 @@
         },
         {
             "title": "CSS",
-            "icon": "public/assets/images/icon-css.svg",
+            "icon": "src/assets/images/icon-css.svg",
             "iconBg":"bg-yellow-200",
             "questions": [
                 {
