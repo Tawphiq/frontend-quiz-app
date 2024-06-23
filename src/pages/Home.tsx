@@ -29,7 +29,7 @@ const Home: React.FC = () => {
           >
             <div className={`md:w-12 md:h-12 p-1 grid justify-center items-center rounded-lg mr-5 ${
               quiz.title === "HTML"?'bg-orange-100'
-              : quiz.title === "CSS"? 'bg-green-100'
+              : quiz.title === "CSS"? 'bg-teal-100'
               : quiz.title === "JavaScript"?'bg-blue-100'
               : 'bg-fuchsia-100'
               } `}>
