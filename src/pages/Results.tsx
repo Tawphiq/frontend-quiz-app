@@ -27,7 +27,7 @@ const Results: React.FC<ResultsProps> = ({ score, totalQuestions, handlePlayAgai
       <p className='grid justify-center text-6xl lg:text-9xl text-dark dark:text-white my-4 lg:my-8'>{score}</p>
       <p className='grid justify-center text-dark dark:text-white'>out of {totalQuestions}</p>
       </div>
-      <button onClick={handlePlayAgain} className="mt-4 h-20 p-2 bg-purple text-white md:text-2xl rounded-2xl w-full hover:bg-fuchsia-400">
+      <button onClick={handlePlayAgain} className="mt-4 h-14 lg:h-20 p-2 bg-purple text-white md:text-2xl rounded-2xl w-full hover:bg-fuchsia-400">
         Play Again
       </button>
       </div>)}
