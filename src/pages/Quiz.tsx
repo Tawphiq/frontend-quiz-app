@@ -34,7 +34,7 @@ const Quiz: React.FC = () => {
     setShowError(false);
     setShowAnswer(true);
 
-    if (selectedOption === currentQuiz.questions[currentQuestionIndex].answer) {
+    if (selectedOption === currentQuiz?.questions[currentQuestionIndex].answer) {
       setScore(score + 1);
     }
 
