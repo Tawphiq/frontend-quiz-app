@@ -127,7 +127,9 @@ const Quiz: React.FC = () => {
             <h3 className="text-start text-lg md:text-xl font-semibold mb-4 lg:mb-20 lg:text-left">
               {questions[currentQuestionIndex].question}
             </h3>
+            <div className='lg:mt-64'>
             <ProgressBar totalQuestions={questions.length} currentQuestionIndex={currentQuestionIndex} />
+            </div>
           </div>
           <div className="lg:w-1/2">
             <div className="flex flex-col items-start">
