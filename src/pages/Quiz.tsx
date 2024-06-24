@@ -217,7 +217,7 @@ const Quiz: React.FC = () => {
                 {showNextButton && (
                   <button
                     onClick={handleNextQuestion}
-                    className="mt-4 h-20 p-2 bg-purple md:text-2xl text-white rounded-2xl w-full"
+                    className="mt-4 h-20 p-2 bg-purple hover:bg-fuchsia-400 md:text-2xl text-white rounded-2xl w-full"
                     ref={nextRef}
                     tabIndex={0}
                   >
