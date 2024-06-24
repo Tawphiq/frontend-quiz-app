@@ -22,7 +22,9 @@ const Quiz: React.FC = () => {
   const nextRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
-    optionsRef.current = optionsRef.current.slice(0, currentQuiz?.questions[currentQuestionIndex].options.length);
+    if (currentQuiz) {
+      optionsRef.current = optionsRef.current.slice(0, currentQuiz.questions[currentQuestionIndex].options.length);
+    }
   }, [currentQuiz, currentQuestionIndex]);
 
   const handleAnswer = () => {
@@ -42,7 +44,7 @@ const Quiz: React.FC = () => {
   };
 
   const handleNextQuestion = () => {
-    if (currentQuestionIndex < currentQuiz.questions.length - 1) {
+    if (currentQuestionIndex < (currentQuiz?.questions.length ?? 0) - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
       setSelectedOption(null);
       setShowAnswer(false);
