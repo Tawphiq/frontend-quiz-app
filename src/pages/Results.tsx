@@ -15,7 +15,7 @@ const Results: React.FC<ResultsProps> = ({ score, totalQuestions, handlePlayAgai
   return (
     <div className="p-2 lg:p-0 lg:grid lg:grid-cols-2">
       <div>
-      <h2 className="font-thin text-dark dark:white text-4xl md:text-6xl lg:text-7xl">Quiz Completed</h2>
+      <h2 className="font-thin text-dark dark:text-white text-4xl md:text-6xl lg:text-7xl">Quiz Completed</h2>
       <h1 className='font-bold text-dark dark:text-white text-4xl md:text-6xl lg:text-7xl mb-8'>You scored...</h1>
       </div>
       {currentQuiz && (<div className='lg:mx-14'>
