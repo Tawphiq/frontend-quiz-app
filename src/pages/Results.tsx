@@ -21,7 +21,7 @@ const Results: React.FC<ResultsProps> = ({ score, totalQuestions, handlePlayAgai
       {currentQuiz && (<div className='lg:mx-14'>
       <div className='bg-white dark:bg-dark p-5 rounded-lg shadow '>
       <div className='flex justify-center gap-2'>
-      <img src={currentQuiz.icon} alt="" className={`p-1 rounded ${
+      <img src={currentQuiz.icon} alt="" className={`p-1 rounded w-10 h-10 ${
               currentQuiz.title === "HTML" ? 'bg-orange-100'
               : currentQuiz.title === "CSS" ? 'bg-teal-100'
               : currentQuiz.title === "JavaScript" ? 'bg-blue-100'
