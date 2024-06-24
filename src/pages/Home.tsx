@@ -14,7 +14,7 @@ const Home: React.FC = () => {
     navigate('/quiz');
   };
 
-  const handleButtonKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>, index: number, subject: string) => {
+  const handleButtonKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>, _index: number, subject: string) => {
     switch (event.key) {
       case 'Enter':
         handleSelect(subject);
