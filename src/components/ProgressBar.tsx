@@ -9,9 +9,9 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ totalQuestions, currentQuesti
   const progressPercentage = ((currentQuestionIndex + 1) / totalQuestions) * 100;
 
   return (
-    <div className="w-full bg-white rounded-full h-4 mb-4">
+    <div className="w-full bg-white rounded-full h-3 mb-4">
       <div
-        className="bg-purple h-4 rounded-full"
+        className="bg-purple h-3 rounded-full"
         style={{ width: `${progressPercentage}%` }}
       ></div>
     </div>
