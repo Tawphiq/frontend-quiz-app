@@ -117,7 +117,7 @@ const Quiz: React.FC = () => {
   const questions = currentQuiz.questions;
 
   return (
-    <div className="p-4 md:p-20">
+    <div className="p-4 lg:py-6 md:p-20">
       {!quizCompleted ? (
         <div className="lg:flex lg:gap-20">
           <div className="lg:w-1/2">
