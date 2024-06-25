@@ -1,11 +1,8 @@
 import React from 'react';
-//import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AppRouter from './router/Router';
-//import Home from './pages/Home';
-//import Quiz from './pages/Quiz';
 import { QuizProvider } from './context/QuizContext';
 import { useTheme } from './context/ThemeContext';
-//import Header from './components/Header';
+
 
 const App: React.FC = () => {
   const { theme} = useTheme();
@@ -19,13 +16,9 @@ const App: React.FC = () => {
 
   return (
     <QuizProvider>
-      
         <div className={`min-h-screen bg-cover bg-center font-rubik ${backgroundClass()}`}>
-          
           <AppRouter />
-          
         </div>
-      
     </QuizProvider>
   );
 };
