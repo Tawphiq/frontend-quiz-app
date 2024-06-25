@@ -12,6 +12,9 @@ const Header: React.FC = () => {
   const { theme } = useTheme();
   const { currentQuiz } = useQuiz();
 
+  console.log("currentQuiz:", currentQuiz);
+  console.log("currentQuiz icon:", currentQuiz?.icon);
+
   return (
     <header className="flex justify-between items-center p-5 md:py-8 md:px-20">
       <div className="flex items-center">
