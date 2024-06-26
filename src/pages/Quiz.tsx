@@ -172,7 +172,7 @@ const Quiz: React.FC = () => {
                             : ''
                         } ${
                           isCorrect
-                            ? 'bg-green text-white group-hover:bg-green group-hover:text-white'
+                            ? `${notSelectedButCorrect ? 'bg-gray-100' : 'bg-green text-white group-hover:bg-green group-hover:text-white'}`
                             : ''
                         } md:w-12 md:h-12 p-1 grid justify-center items-center bg-lightbg text-darkthin dark:text-dark mr-5 text-3xl rounded-lg group-hover:bg-fuchsia-100 group-hover:text-purple`}
                       >
