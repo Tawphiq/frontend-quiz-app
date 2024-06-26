@@ -128,7 +128,7 @@ const Quiz: React.FC = () => {
               {questions[currentQuestionIndex].question}
             </h3>
             <div className='lg:mt-64'>
-            <ProgressBar totalQuestions={questions.length} currentQuestionIndex={currentQuestionIndex} />
+              <ProgressBar totalQuestions={questions.length} currentQuestionIndex={currentQuestionIndex} />
             </div>
           </div>
           <div className="lg:w-1/2">
@@ -242,4 +242,3 @@ const Quiz: React.FC = () => {
 };
 
 export default Quiz;
-
