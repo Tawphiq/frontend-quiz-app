@@ -139,7 +139,6 @@ const Quiz: React.FC = () => {
                 const isSelected = selectedOption === option;
                 const isSelectedAndIncorrect = showAnswer && isSelected && !isCorrect;
                 const notSelectedButCorrect = showAnswer && !isSelected && isCorrect;
-               
 
                 return (
                   <button
@@ -149,7 +148,7 @@ const Quiz: React.FC = () => {
                     className={`group p-4 h-20 rounded-2xl shadow bg-white dark:bg-dark md:text-xl font-semibold text-dark dark:text-white w-full text-left mb-2 flex items-center justify-between ${
                       showAnswer
                         ? isCorrect
-                          ? `${notSelectedButCorrect ? '' : 'border-green border-2'}`
+                          ? `${notSelectedButCorrect ? '' : 'border-emerald-400 border-2'}`
                           : isSelectedAndIncorrect
                           ? 'border-red-500 border-2'
                           : 'border-gray-300'
