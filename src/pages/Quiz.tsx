@@ -139,6 +139,7 @@ const Quiz: React.FC = () => {
                 const isSelected = selectedOption === option;
                 const isSelectedAndIncorrect = showAnswer && isSelected && !isCorrect;
                 const notSelectedButCorrect = showAnswer && !isSelected && isCorrect;
+               // borderColor = 
 
                 return (
                   <button
@@ -162,15 +163,16 @@ const Quiz: React.FC = () => {
                   >
                     <div className='flex items-center'>
                       <div
-                        className={` ${
-                          isSelectedAndIncorrect
-                            ? 'bg-red-500 group-hover:bg-red-500 group-hover:text-white'
-                            : ''
-                        } ${
+                        className={`${ showAnswer &&
                           isCorrect
                             ?  `${!notSelectedButCorrect ? "bg-[#26D782] text-white group-hover:bg-[#26D782] group-hover:text-white" : 'bg-gray-100'} `
                             : ""
-                        } ${
+                        }
+                           ${
+                          isSelectedAndIncorrect
+                            ? 'bg-red-500 group-hover:bg-red-500 group-hover:text-white'
+                            : ''
+                        }  ${
                           isSelected
                             ? 'bg-purple text-white dark:text-white group-hover:bg-purple group-hover:text-white'
                             : ''
