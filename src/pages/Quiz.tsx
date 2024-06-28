@@ -148,7 +148,6 @@ const Quiz: React.FC = () => {
                 : isSelected
                 ? 'bg-purple text-white group-hover:bg-purple group-hover:text-white'
                 : ''
-                  
 
 
                 return (
