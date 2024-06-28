@@ -142,7 +142,7 @@ const Quiz: React.FC = () => {
                 const labelBg =
                   showAnswer
                   ? isCorrect
-                    ?  `${notSelectedButCorrect? "bg-lightbg":"text-white dark:text-white bg-emerald-400 group-hover:bg-emerald-400 group-hover:text-white"}`
+                    ?  "text-white dark:text-white bg-emerald-400 group-hover:bg-emerald-400 group-hover:text-white"
                     : isSelectedAndIncorrect
                     ? 'bg-red-500 group-hover:bg-red-500 text-white group-hover:text-white' : ""
                   : isSelected
