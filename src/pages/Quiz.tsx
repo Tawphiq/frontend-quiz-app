@@ -391,11 +391,11 @@ const Quiz: React.FC = () => {
                     onKeyDown={(event) => handleKeyDown(event, index, option)}
                     className={`group p-4 h-20 rounded-2xl shadow bg-white dark:bg-dark md:text-xl font-semibold text-dark dark:text-white w-full text-left mb-2 flex items-center justify-between ${
                       showAnswer
-                        ? (isCorrect && !notSelectedButCorrect
+                        ? isCorrect && !notSelectedButCorrect
                           ? "border-emerald-400 border-2"
                           : isSelectedAndIncorrect
                           ? 'border-red-500 border-2'
-                          : 'border-gray-300')
+                          : 'border-gray-300'
                         : isSelected
                         ? 'border-purple border-2 dark:text-white'
                         : ''
@@ -406,11 +406,11 @@ const Quiz: React.FC = () => {
                   >
                     <div className={`md:w-12 md:h-12 p-1 grid justify-center items-center bg-lightbg text-darkthin dark:text-dark mr-5 text-3xl rounded-lg group-hover:bg-fuchsia-100 group-hover:text-purple ${
                       showAnswer
-                        ? isCorrect && !notSelectedButCorrect
+                        ? (isCorrect && !notSelectedButCorrect
                           ? "text-white dark:text-white bg-emerald-400 group-hover:bg-emerald-400 group-hover:text-white"
                           : isSelectedAndIncorrect
                           ? 'bg-red-500 group-hover:bg-red-500 text-white group-hover:text-white'
-                          : ''
+                          : '')
                         : isSelected
                           ? 'bg-purple text-white dark:text-white group-hover:bg-purple group-hover:text-white'
                           : ''
