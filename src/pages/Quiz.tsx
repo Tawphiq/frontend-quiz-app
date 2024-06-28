@@ -141,12 +141,12 @@ const Quiz: React.FC = () => {
                 const notSelectedButCorrect = showAnswer && !isSelected && isCorrect;
                 const labelBg = showAnswer
                 ? isCorrect
-                  ? `${notSelectedButCorrect ? '' : 'bg-emerald-400 group-hover:bg-emerald-400 group-hover:text-white text-white'}`
+                  ? `${notSelectedButCorrect ? '' : 'bg-green-400 group-hover:bg-green-400 text-white'}`
                   : isSelectedAndIncorrect
                   ? 'bg-red-500 text-white group-hover:bg-red-500 group-hover:text-white'
                   : 'bg-lightbg'
                 : isSelected
-                ? 'bg-purple text-white group-hover:bg-purple group-hover:text-white'
+                ? 'bg-purple-500 text-white group-hover:bg-purple-500 group-hover:text-white'
                 : ''
 
 
@@ -158,12 +158,12 @@ const Quiz: React.FC = () => {
                     className={`group p-4 h-20 rounded-2xl shadow bg-white dark:bg-dark md:text-xl font-semibold text-dark dark:text-white w-full text-left mb-2 flex items-center justify-between ${
                       showAnswer
                         ? isCorrect
-                          ? `${notSelectedButCorrect ? '' : 'border-emerald-400 border-2'}`
+                          ? `${notSelectedButCorrect ? '' : 'border-green-400 border-2'}`
                           : isSelectedAndIncorrect
                           ? 'border-red-500 border-2'
                           : 'border-gray-300'
                         : isSelected
-                        ? 'border-purple border-2 dark:text-white'
+                        ? 'border-purple-500 border-2 dark:text-white'
                         : ''
                     }`}
                     disabled={showAnswer}
@@ -204,7 +204,7 @@ const Quiz: React.FC = () => {
             {!showAnswer ? (
               <button
                 onClick={handleAnswer}
-                className="mt-4 h-20 p-2 bg-purple text-white md:text-2xl rounded-2xl w-full hover:bg-fuchsia-400"
+                className="mt-4 h-20 p-2 bg-purple-500 text-white md:text-2xl rounded-2xl w-full hover:bg-fuchsia-400"
                 ref={submitRef}
                 tabIndex={0}
                 onKeyDown={handleSubmitKeyDown}
@@ -216,7 +216,7 @@ const Quiz: React.FC = () => {
                 {showNextButton && (
                   <button
                     onClick={handleNextQuestion}
-                    className="mt-4 h-20 p-2 bg-purple hover:bg-fuchsia-400 md:text-2xl text-white rounded-2xl w-full"
+                    className="mt-4 h-20 p-2 bg-purple-500 hover:bg-fuchsia-400 md:text-2xl text-white rounded-2xl w-full"
                     ref={nextRef}
                     tabIndex={0}
                   >
