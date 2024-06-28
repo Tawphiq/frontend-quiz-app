@@ -391,11 +391,11 @@ const Quiz: React.FC = () => {
                     onKeyDown={(event) => handleKeyDown(event, index, option)}
                     className={`group p-4 h-20 rounded-2xl shadow bg-white dark:bg-dark md:text-xl font-semibold text-dark dark:text-white w-full text-left mb-2 flex items-center justify-between ${
                       showAnswer
-                        ? isCorrect && !notSelectedButCorrect
+                        ? (isCorrect && !notSelectedButCorrect
                           ? "border-emerald-400 border-2"
                           : isSelectedAndIncorrect
                           ? 'border-red-500 border-2'
-                          : 'border-gray-300'
+                          : 'border-gray-300')
                         : isSelected
                         ? 'border-purple border-2 dark:text-white'
                         : ''
