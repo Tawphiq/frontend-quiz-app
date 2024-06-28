@@ -139,6 +139,16 @@ const Quiz: React.FC = () => {
                 const isSelected = selectedOption === option;
                 const isSelectedAndIncorrect = showAnswer && isSelected && !isCorrect;
                 const notSelectedButCorrect = showAnswer && !isSelected && isCorrect;
+                const labelBg =
+                  showAnswer
+                  ? isCorrect
+                    ?  `${notSelectedButCorrect? "bg-lightbg":"text-white dark:text-white bg-emerald-400 group-hover:bg-emerald-400 group-hover:text-white"}`
+                    : isSelectedAndIncorrect
+                    ? 'bg-red-500 group-hover:bg-red-500 text-white group-hover:text-white' : ""
+                  : isSelected
+                    ? 'bg-purple text-white dark:text-white group-hover:bg-purple group-hover:text-white'
+                    : ''
+
 
                 return (
                   <button
@@ -162,16 +172,7 @@ const Quiz: React.FC = () => {
                   >
                     <div className='flex items-center'>
                       <div
-                        className={` md:w-12 md:h-12 p-1 grid justify-center items-center  bg-lightbg text-darkthin dark:text-dark mr-5 text-3xl rounded-lg group-hover:bg-fuchsia-100 group-hover:text-purple ${
-                          showAnswer
-                          ? isCorrect
-                            ?  `${!isSelected? "bg-lightbg":"text-white dark:text-white bg-emerald-400 group-hover:bg-emerald-400 group-hover:text-white"}`
-                            : isSelectedAndIncorrect
-                            ? 'bg-red-500 group-hover:bg-red-500 text-white group-hover:text-white' : ""
-                          : isSelected
-                            ? 'bg-purple text-white dark:text-white group-hover:bg-purple group-hover:text-white'
-                            : ''
-                        }
+                        className={` md:w-12 md:h-12 p-1 grid justify-center items-center  bg-lightbg text-darkthin dark:text-dark mr-5 text-3xl rounded-lg group-hover:bg-fuchsia-100 group-hover:text-purple ${labelBg}
                         `}
                       >
                         {label}
