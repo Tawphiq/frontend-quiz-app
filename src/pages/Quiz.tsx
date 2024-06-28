@@ -163,10 +163,10 @@ const Quiz: React.FC = () => {
                   >
                     <div className='flex items-center'>
                       <div
-                        className={` md:w-12 md:h-12 p-1 grid justify-center items-center bg-lightbg text-darkthin dark:text-dark mr-5 text-3xl rounded-lg group-hover:bg-fuchsia-100 group-hover:text-purple ${
+                        className={` md:w-12 md:h-12 p-1 grid justify-center items-center  bg-lightbg text-darkthin dark:text-dark mr-5 text-3xl rounded-lg group-hover:bg-fuchsia-100 group-hover:text-purple ${
                           showAnswer
                           ?isCorrect
-                            ?  `${!notSelectedButCorrect ? "bg-[#26D782] text-white group-hover:bg-green group-hover:text-white" : 'bg-gray-100'} `
+                            ?  `${!notSelectedButCorrect ? "text-white bg-[#26D782] group-hover:bg-[#26D782] group-hover:text-white" : ''} `
                             : isSelectedAndIncorrect
                             ? 'bg-red-500 group-hover:bg-red-500 text-white group-hover:text-white' : ""
                           : isSelected
