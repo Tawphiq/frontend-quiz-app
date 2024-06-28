@@ -139,7 +139,7 @@ const Quiz: React.FC = () => {
                 const isSelected = selectedOption === option;
                 const isSelectedAndIncorrect = showAnswer && isSelected && !isCorrect;
                 const notSelectedButCorrect = showAnswer && !isSelected && isCorrect;
-               // borderColor = 
+               
 
                 return (
                   <button
