@@ -164,7 +164,7 @@
 //                       <div
 //                         className={` md:w-12 md:h-12 p-1 grid justify-center items-center  bg-lightbg text-darkthin dark:text-dark mr-5 text-3xl rounded-lg group-hover:bg-fuchsia-100 group-hover:text-purple ${
 //                           showAnswer
-//                           ?isCorrect && !notSelectedButCorrect
+//                           ? isCorrect
 //                             ?  "text-white dark:text-white bg-emerald-400 group-hover:bg-emerald-400 group-hover:text-white" 
 //                             : isSelectedAndIncorrect
 //                             ? 'bg-red-500 group-hover:bg-red-500 text-white group-hover:text-white' : ""
@@ -240,6 +240,7 @@
 // };
 
 // export default Quiz;
+
 
 
 import React, { useState, useEffect, useRef } from 'react';
@@ -384,6 +385,13 @@ const Quiz: React.FC = () => {
                 const isSelectedAndIncorrect = showAnswer && isSelected && !isCorrect;
                 const notSelectedButCorrect = showAnswer && !isSelected && isCorrect;
 
+                // Logging the state of each option for debugging
+                console.log(`Option: ${option}`);
+                console.log(`isCorrect: ${isCorrect}`);
+                console.log(`isSelected: ${isSelected}`);
+                console.log(`isSelectedAndIncorrect: ${isSelectedAndIncorrect}`);
+                console.log(`notSelectedButCorrect: ${notSelectedButCorrect}`);
+
                 return (
                   <button
                     key={index}
@@ -391,30 +399,34 @@ const Quiz: React.FC = () => {
                     onKeyDown={(event) => handleKeyDown(event, index, option)}
                     className={`group p-4 h-20 rounded-2xl shadow bg-white dark:bg-dark md:text-xl font-semibold text-dark dark:text-white w-full text-left mb-2 flex items-center justify-between ${
                       showAnswer
-                        ? isCorrect && !notSelectedButCorrect
-                          ? "border-emerald-400 border-2"
+                        ? isCorrect
+                          ? !notSelectedButCorrect
+                            ? "border-emerald-400 border-2"
+                            : ""
                           : isSelectedAndIncorrect
-                          ? 'border-red-500 border-2'
-                          : 'border-gray-300'
+                          ? "border-red-500 border-2"
+                          : "border-gray-300"
                         : isSelected
-                        ? 'border-purple border-2 dark:text-white'
-                        : ''
+                        ? "border-purple border-2 dark:text-white"
+                        : ""
                     }`}
                     disabled={showAnswer}
                     tabIndex={0}
                     ref={(el) => (optionsRef.current[index] = el)}
                   >
-                    <div className={`md:w-12 md:h-12 p-1 grid justify-center items-center bg-lightbg text-darkthin dark:text-dark mr-5 text-3xl rounded-lg group-hover:bg-fuchsia-100 group-hover:text-purple ${
-                      showAnswer
-                        ? (isCorrect && !notSelectedButCorrect
-                          ? "text-white dark:text-white bg-emerald-400 group-hover:bg-emerald-400 group-hover:text-white"
-                          : isSelectedAndIncorrect
-                          ? 'bg-red-500 group-hover:bg-red-500 text-white group-hover:text-white'
-                          : '')
-                        : isSelected
-                          ? 'bg-purple text-white dark:text-white group-hover:bg-purple group-hover:text-white'
-                          : ''
-                    }`}>
+                    <div
+                      className={`md:w-12 md:h-12 p-1 grid justify-center items-center bg-lightbg text-darkthin dark:text-dark mr-5 text-3xl rounded-lg group-hover:bg-fuchsia-100 group-hover:text-purple ${
+                        showAnswer
+                          ? isCorrect && !notSelectedButCorrect
+                            ? "text-white dark:text-white bg-emerald-400 group-hover:bg-emerald-400 group-hover:text-white"
+                            : isSelectedAndIncorrect
+                            ? "bg-red-500 group-hover:bg-red-500 text-white group-hover:text-white"
+                            : ""
+                          : isSelected
+                          ? "bg-purple text-white dark:text-white group-hover:bg-purple group-hover:text-white"
+                          : ""
+                      }`}
+                    >
                       {label}
                     </div>
                     <span>{option}</span>
@@ -423,7 +435,7 @@ const Quiz: React.FC = () => {
                         {isSelected && (
                           <img
                             src={isCorrect ? correctIcon : incorrectIcon}
-                            alt={isCorrect ? 'Correct' : 'Incorrect'}
+                            alt={isCorrect ? "Correct" : "Incorrect"}
                             className="w-5 h-5"
                           />
                         )}
