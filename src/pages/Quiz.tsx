@@ -401,8 +401,8 @@ const Quiz: React.FC = () => {
                       showAnswer
                         ? isCorrect
                           ? !notSelectedButCorrect
-                            ? "border-emerald-400 border-2"
-                            : ""
+                            ?  "border-emerald-400 border-2"
+                    : ""
                           : isSelectedAndIncorrect
                           ? "border-red-500 border-2"
                           : "border-gray-300"
@@ -418,8 +418,8 @@ const Quiz: React.FC = () => {
                       className={`md:w-12 md:h-12 p-1 grid justify-center items-center bg-lightbg text-darkthin dark:text-dark mr-5 text-3xl rounded-lg group-hover:bg-fuchsia-100 group-hover:text-purple ${
                         showAnswer
                           ? isCorrect && !notSelectedButCorrect
-                            ? "text-white dark:text-white bg-emerald-400 group-hover:bg-emerald-400 group-hover:text-white"
-                            : isSelectedAndIncorrect
+                            ? (console.log('Applying bg-emerald-400'), "text-white dark:text-white bg-emerald-400 group-hover:bg-emerald-400 group-hover:text-white"
+                      ): isSelectedAndIncorrect
                             ? "bg-red-500 group-hover:bg-red-500 text-white group-hover:text-white"
                             : ""
                           : isSelected
