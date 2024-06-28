@@ -160,7 +160,7 @@ const Quiz: React.FC = () => {
                     tabIndex={0}
                     ref={(el) => (optionsRef.current[index] = el)}
                   >
-                    <div className='flex items-center transition-colors duration-300'>
+                    <div className='flex items-center'>
                       <div
                         className={` ${
                           isSelectedAndIncorrect
