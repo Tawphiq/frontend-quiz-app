@@ -23,9 +23,8 @@ export default {
         darkthin: "#626C7F",
         thinlight: "#ABC1E1",
         purple:"#A729F5",
-      
 
-      }
+      },
     },
     fontFamily: {
       rubik:["Rubik", "Nunito"]
