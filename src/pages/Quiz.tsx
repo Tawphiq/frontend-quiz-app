@@ -139,15 +139,16 @@ const Quiz: React.FC = () => {
                 const isSelected = selectedOption === option;
                 const isSelectedAndIncorrect = showAnswer && isSelected && !isCorrect;
                 const notSelectedButCorrect = showAnswer && !isSelected && isCorrect;
-                const labelBg =
-                  showAnswer
-                  ? isCorrect
-                    ?  `${notSelectedButCorrect? "":"text-white dark:text-white bg-emerald-400 group-hover:bg-emerald-400 group-hover:text-white"}`
-                    : isSelectedAndIncorrect
-                    ? 'bg-red-500 group-hover:bg-red-500 text-white group-hover:text-white' : ""
-                  : isSelected
-                    ? `${isCorrect? "bg-emerald-400":'bg-purple text-white dark:text-white group-hover:bg-purple group-hover:text-white'}`
-                    : ''
+                const labelBg = showAnswer
+                ? isCorrect
+                  ? `${notSelectedButCorrect ? '' : 'border-emerald-400 border-2'}`
+                  : isSelectedAndIncorrect
+                  ? 'border-red-500 border-2'
+                  : 'border-gray-300'
+                : isSelected
+                ? 'border-purple border-2 dark:text-white'
+                : ''
+                  
 
 
                 return (
