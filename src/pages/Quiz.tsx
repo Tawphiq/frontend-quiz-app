@@ -164,8 +164,8 @@ const Quiz: React.FC = () => {
                       <div
                         className={` md:w-12 md:h-12 p-1 grid justify-center items-center  bg-lightbg text-darkthin dark:text-dark mr-5 text-3xl rounded-lg group-hover:bg-fuchsia-100 group-hover:text-purple ${
                           showAnswer
-                          ?isCorrect
-                            ?  `${!notSelectedButCorrect ? "text-white bg-emerald-400 group-hover:bg-emerald-400 group-hover:text-white" : ''} `
+                          ?isCorrect && !notSelectedButCorrect
+                            ?  "text-white dark:text-white bg-emerald-400 group-hover:bg-emerald-400 group-hover:text-white" 
                             : isSelectedAndIncorrect
                             ? 'bg-red-500 group-hover:bg-red-500 text-white group-hover:text-white' : ""
                           : isSelected
