@@ -141,12 +141,12 @@ const Quiz: React.FC = () => {
                 const notSelectedButCorrect = showAnswer && !isSelected && isCorrect;
                 const labelBg = showAnswer
                 ? isCorrect
-                  ? `${notSelectedButCorrect ? '' : 'bg-green-400 group-hover:bg-green-400 text-white'}`
+                  ? `${notSelectedButCorrect ? '' : 'bg-[#26D782] group-hover:bg-[#26D782] text-white group-hover:text-[#F4F6FA]'}`
                   : isSelectedAndIncorrect
-                  ? 'bg-red-500 text-white group-hover:bg-red-500 group-hover:text-white'
+                  ? 'bg-[#EE5454] text-white group-hover:bg-[#EE5454] group-hover:text-white'
                   : 'bg-[#F4F6FA]'
                 : isSelected
-                ? 'bg-purple-500 text-white group-hover:bg-purple-500 group-hover:text-white'
+                ? 'bg-[#A729F5] text-white group-hover:bg-purple-500 group-hover:text-[#F4F6FA]'
                 : ''
 
 
@@ -172,7 +172,7 @@ const Quiz: React.FC = () => {
                   >
                     <div className='flex items-center'>
                       <div
-                        className={` md:w-12 md:h-12 p-1 grid justify-center items-center  bg-lightbg text-darkthin dark:text-[#3B4D66] mr-5 text-3xl rounded-lg group-hover:bg-fuchsia-100 group-hover:text-purple ${labelBg}
+                        className={` md:w-12 md:h-12 p-1 grid justify-center items-center  bg-[#F4F6FA] text-darkthin dark:text-[#3B4D66] mr-5 text-3xl rounded-lg group-hover:bg-fuchsia-100 group-hover:text-purple-500 ${labelBg}
                         `}
                       >
                         {label}
