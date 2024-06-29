@@ -28,7 +28,7 @@ const Header: React.FC = () => {
               }`}>
               <img src={currentQuiz.icon} alt={currentQuiz.title} className="w-8 h-8" />
             </div>
-            <span className="font-bold text-dark dark:text-white text-xl md:text-2xl ml-2">{currentQuiz.title}</span>
+            <span className="font-bold text-[#3B4D66] dark:text-white text-xl md:text-2xl ml-2">{currentQuiz.title}</span>
           </div>
         )}
       </div>

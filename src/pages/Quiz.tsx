@@ -121,7 +121,7 @@ const Quiz: React.FC = () => {
       {!quizCompleted ? (
         <div className="lg:flex lg:gap-20">
           <div className="lg:w-1/2">
-            <i className="mb-4 text-center lg:text-left font-thin text-sm md:text-2xl text-darkthin dark:text-thinlight">
+            <i className="mb-4 text-center lg:text-left font-thin text-sm md:text-2xl text-[#626C7F] dark:text-[#ABC1E1]">
               Question {currentQuestionIndex + 1} of {questions.length}
             </i>
             <h3 className="text-start text-lg md:text-xl font-semibold mb-4 lg:mb-20 lg:text-left">
@@ -144,7 +144,7 @@ const Quiz: React.FC = () => {
                   ? `${notSelectedButCorrect ? '' : 'bg-green-400 group-hover:bg-green-400 text-white'}`
                   : isSelectedAndIncorrect
                   ? 'bg-red-500 text-white group-hover:bg-red-500 group-hover:text-white'
-                  : 'bg-lightbg'
+                  : 'bg-[#F4F6FA]'
                 : isSelected
                 ? 'bg-purple-500 text-white group-hover:bg-purple-500 group-hover:text-white'
                 : ''
@@ -155,7 +155,7 @@ const Quiz: React.FC = () => {
                     key={index}
                     onClick={() => !showAnswer && setSelectedOption(option)}
                     onKeyDown={(event) => handleKeyDown(event, index, option)}
-                    className={`group p-4 h-20 rounded-2xl shadow bg-white dark:bg-dark md:text-xl font-semibold text-dark dark:text-white w-full text-left mb-2 flex items-center justify-between ${
+                    className={`group p-4 h-20 rounded-2xl shadow bg-white dark:bg-[#3B4D66] md:text-xl font-semibold text-[#3B4D66] dark:text-white w-full text-left mb-2 flex items-center justify-between ${
                       showAnswer
                         ? isCorrect
                           ? `${notSelectedButCorrect ? '' : 'border-green-400 border-2'}`
@@ -172,7 +172,7 @@ const Quiz: React.FC = () => {
                   >
                     <div className='flex items-center'>
                       <div
-                        className={` md:w-12 md:h-12 p-1 grid justify-center items-center  bg-lightbg text-darkthin dark:text-dark mr-5 text-3xl rounded-lg group-hover:bg-fuchsia-100 group-hover:text-purple ${labelBg}
+                        className={` md:w-12 md:h-12 p-1 grid justify-center items-center  bg-lightbg text-darkthin dark:text-[#3B4D66] mr-5 text-3xl rounded-lg group-hover:bg-fuchsia-100 group-hover:text-purple ${labelBg}
                         `}
                       >
                         {label}

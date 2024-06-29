@@ -9,9 +9,9 @@ const App: React.FC = () => {
 
   const backgroundClass = () => {
     if (theme === 'dark') {
-      return 'bg-mobile-dark bg-darkbg text-white md:bg-tablet-dark lg:bg-desktop-dark';
+      return 'bg-mobile-dark bg-[#313E51] text-white md:bg-tablet-dark lg:bg-desktop-dark';
     }
-    return 'bg-mobile-light bg-lightbg md:bg-tablet-light lg:bg-desktop-light';
+    return 'bg-mobile-light bg-[#F4F6FA] md:bg-tablet-light lg:bg-desktop-light';
   };
 
   return (
