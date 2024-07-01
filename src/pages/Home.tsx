@@ -1,4 +1,3 @@
-// src/pages/Home.tsx
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useQuiz } from '../context/QuizContext';
@@ -11,7 +10,6 @@ const Home: React.FC = () => {
 
   const handleSelect = (subject: string) => {
     setSubject(subject);
-    //navigate('/quiz');
     navigate(`/quiz/${subject}`);
   };
 
@@ -40,10 +38,10 @@ const Home: React.FC = () => {
 
   return (
     <div className="grid lg:grid-cols-2 p-8 md:p-20 lg:px-40">
-      <div className="text-2xl font-bold mb-4 p-4 text-dark dark:text-white">
+      <div className="text-2xl font-bold mb-4 p-4 text-[#3B4D66] dark:text-white">
         <p className='font-thin text-4xl md:text-6xl lg:text-5xl'>Welcome to the</p>
         <p className='font-bold text-4xl md:text-6xl lg:text-5xl mb-2 md:mb-5 lg:mb-10'>Frontend Quiz!</p>
-        <i className='font-thin text-sm md:text-2xl text-darkthin dark:text-thinlight'>Pick a subject to get started</i>
+        <i className='font-thin text-sm md:text-2xl text-[#626C7F] dark:text-[#ABC1E1]'>Pick a subject to get started</i>
       </div>
       <div className="grid gap-4 md:mt-10 lg:mt-0">
         {quizzes.map((quiz, index) => (
@@ -53,8 +51,8 @@ const Home: React.FC = () => {
             onKeyDown={(event) => handleButtonKeyDown(event, index, quiz.title)}
             tabIndex={0}
             ref={(el) => buttonRefs.current[index] = el}
-            className={`flex items-center lg:text-2xl p-4 rounded-2xl bg-white dark:bg-dark shadow focus:outline-none ${
-              focusedIndex === index ? 'border-2 border-purple' : ''
+            className={`flex items-center lg:text-2xl p-4 rounded-2xl bg-white dark:bg-[#3B4D66] shadow focus:outline-none ${
+              focusedIndex === index ? 'border-2 border-[#A729F5]' : ''
             }`}
           >
             <div className={`md:w-12 md:h-12 p-1 grid justify-center items-center rounded-lg mr-5 ${
@@ -65,7 +63,7 @@ const Home: React.FC = () => {
               } `}>
               <img src={quiz.icon} alt={quiz.title} className="w-6 h-6" />
             </div>
-            <span className='font-bold text-dark dark:text-white'>{quiz.title}</span>
+            <span className='font-bold text-[#3B4D66] dark:text-white'>{quiz.title}</span>
           </button>
         ))}
       </div>
