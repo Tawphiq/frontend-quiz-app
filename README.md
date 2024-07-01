@@ -35,7 +35,14 @@ Users should be able to:
 
 ### Screenshot
 
-![Screenshot](./screenshot.jpg)
+![Mobile View)](https://github.com/Tawphiq/frontend-quiz-app/assets/84660782/c867431e-45cd-4728-8a45-207d0db96854)
+
+![Tablet View](https://github.com/Tawphiq/frontend-quiz-app/assets/84660782/a0c6c230-b99e-4522-acbf-7ea1a69199fa)
+
+![Screenshot (199)](https://github.com/Tawphiq/frontend-quiz-app/assets/84660782/53f28f68-d94e-4238-a53f-4195f947a5e3)
+
+
+
 
 ### Links
 
