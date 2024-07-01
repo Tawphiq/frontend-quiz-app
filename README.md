@@ -12,6 +12,7 @@ This is a solution to the AmaliTech Frontend Quiz App Solution.
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Useful resources](#useful-resources)
+- [Running the app](#running-the-app)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
@@ -75,6 +76,19 @@ This project was my first time building an application with TypeScript. It was a
 
 - [React TypeScript Cheatsheets](https://react-typescript-cheatsheet.netlify.app/) - This helped me with TypeScript patterns and best practices in React.
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs) - This is an amazing resource for quickly styling the application using utility-first CSS.
+
+
+## Running the app
+
+1. Clone the repository:
+   git clone https://github.com/tawphiq/frontend-quiz-app.git
+
+2. Install the dependencies:
+   npm install
+
+3. To run the application locally, use the following command:
+   npm run dev
+
 
 ## Author
 
