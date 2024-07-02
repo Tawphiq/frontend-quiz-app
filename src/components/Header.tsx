@@ -16,7 +16,7 @@ const Header: React.FC = () => {
   console.log("currentQuiz icon:", currentQuiz?.icon);
 
   return (
-    <header className="flex justify-between items-center p-5 md:py-8 md:px-20">
+    <header className="flex justify-between items-center p-5 md:py-8 md:px-32">
       <div className="flex items-center">
         {currentQuiz && (
           <div className="flex items-center">

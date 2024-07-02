@@ -37,7 +37,7 @@ const Home: React.FC = () => {
   }, [focusedIndex]);
 
   return (
-    <div className="grid lg:grid-cols-2 p-8 md:p-20 lg:px-40">
+    <div className="grid lg:grid-cols-2 p-8 md:p-20 lg:px-32">
       <div className="text-2xl font-bold mb-4 p-4 text-[#3B4D66] dark:text-white">
         <p className='font-thin text-4xl md:text-6xl lg:text-5xl'>Welcome to the</p>
         <p className='font-bold text-4xl md:text-6xl lg:text-5xl mb-2 md:mb-5 lg:mb-10'>Frontend Quiz!</p>
