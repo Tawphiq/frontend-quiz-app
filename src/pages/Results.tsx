@@ -1,4 +1,3 @@
-// src/pages/Results.tsx
 import React from 'react';
 import { useQuiz } from '../context/QuizContext';
 
