@@ -21,6 +21,7 @@ const Quiz: React.FC = () => {
   const optionsRef = useRef<(HTMLButtonElement | null)[]>([]);
   const submitRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
+  const playAgainRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
     if (currentQuiz) {
@@ -42,6 +43,7 @@ const Quiz: React.FC = () => {
     }
 
     setShowNextButton(true);
+    setTimeout(() => nextRef.current?.focus(), 0);
   };
 
   const handleNextQuestion = () => {
@@ -73,6 +75,7 @@ const Quiz: React.FC = () => {
         event.preventDefault();
         if (!showAnswer) {
           setSelectedOption(option);
+          submitRef.current?.focus();
         }
         break;
       case 'ArrowUp':
@@ -97,6 +100,16 @@ const Quiz: React.FC = () => {
   };
 
   const handleSubmitKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
+    if (!showNextButton) {
+      if (event.key === 'Enter') {
+        handleAnswer();
+      }
+    } else {
+      if (event.key === 'Enter') {
+        handleNextQuestion();
+      }
+    }
+
     switch (event.key) {
       case 'ArrowUp':
         event.preventDefault();
@@ -105,6 +118,27 @@ const Quiz: React.FC = () => {
       case 'ArrowDown':
         event.preventDefault();
         nextRef.current?.focus();
+        break;
+      default:
+        break;
+    }
+  };
+
+  const handleNextKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
+    if (event.key === 'Enter') {
+      handleNextQuestion();
+    }
+
+    switch (event.key) {
+      case 'ArrowUp':
+        event.preventDefault();
+        submitRef.current?.focus();
+        break;
+      case 'ArrowDown':
+        event.preventDefault();
+        if (quizCompleted) {
+          playAgainRef.current?.focus();
+        }
         break;
       default:
         break;
@@ -156,7 +190,7 @@ const Quiz: React.FC = () => {
                     key={index}
                     onClick={() => !showAnswer && setSelectedOption(option)}
                     onKeyDown={(event) => handleKeyDown(event, index, option)}
-                    className={`group p-4 h-20 rounded-2xl shadow bg-white dark:bg-[#3B4D66] md:text-xl font-semibold text-[#3B4D66] dark:text-white w-full text-left mb-2 flex items-center justify-between ${
+                    className={`group p-4 h-20 rounded-2xl shadow bg-white dark:bg-[#3B4D66] md:text-xl font-semibold text-[#3B4D66] dark:text-white w-full text-left mb-2 flex items-center justify-between focus:ring-purple-500 ${
                       showAnswer
                         ? isCorrect
                           ? `${notSelectedButCorrect ? '' : 'border-green-400 border-2'}`
@@ -170,10 +204,11 @@ const Quiz: React.FC = () => {
                     disabled={showAnswer}
                     tabIndex={0}
                     ref={(el) => (optionsRef.current[index] = el)}
+                    aria-label={`Option ${label}: ${option}`}
                   >
                     <div className='flex items-center'>
                       <div
-                        className={twMerge('md:w-12 md:h-12 p-1 grid justify-center items-center  bg-[#F4F6FA] text-darkthin dark:text-[#3B4D66] mr-5 text-3xl rounded-lg group-hover:bg-fuchsia-100 group-hover:text-purple-500', labelBg)}
+                        className={twMerge('md:w-12 md:h-12 p-1 grid justify-center items-center bg-[#F4F6FA] text-darkthin dark:text-[#3B4D66] mr-5 text-3xl rounded-lg group-hover:bg-fuchsia-100 group-hover:text-purple-500', labelBg)}
                       >
                         {label}
                       </div>
@@ -204,10 +239,11 @@ const Quiz: React.FC = () => {
             {!showAnswer ? (
               <button
                 onClick={handleAnswer}
-                className="mt-4 h-20 p-2 bg-purple-500 text-white md:text-2xl rounded-2xl w-full hover:bg-fuchsia-400"
+                className="mt-4 h-20 p-2 bg-purple-500 text-white md:text-2xl rounded-2xl w-full hover:bg-fuchsia-400 focus:ring-purple-500"
                 ref={submitRef}
                 tabIndex={0}
                 onKeyDown={handleSubmitKeyDown}
+                aria-label="Submit Answer"
               >
                 Submit Answer
               </button>
@@ -216,9 +252,11 @@ const Quiz: React.FC = () => {
                 {showNextButton && (
                   <button
                     onClick={handleNextQuestion}
-                    className="mt-4 h-20 p-2 bg-purple-500 hover:bg-fuchsia-400 md:text-2xl text-white rounded-2xl w-full"
+                    className="mt-4 h-20 p-2 bg-purple-500 hover:bg-fuchsia-400 md:text-2xl text-white rounded-2xl w-full focus:ring-purple-500"
                     ref={nextRef}
                     tabIndex={0}
+                    onKeyDown={handleNextKeyDown}
+                    aria-label="Next Question"
                   >
                     Next Question
                   </button>
@@ -227,7 +265,7 @@ const Quiz: React.FC = () => {
             )}
             {showError && (
               <div className="text-red-500 text-2xl w-full mt-4 flex justify-center items-center">
-                <img src={errorIcon} alt="" className="inline-block align-middle" />
+                <img src={errorIcon} alt="Error: Please select an option" className="inline-block align-middle" />
                 Please select an option
               </div>
             )}

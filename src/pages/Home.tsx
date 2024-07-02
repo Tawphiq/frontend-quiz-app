@@ -51,7 +51,7 @@ const Home: React.FC = () => {
             onKeyDown={(event) => handleButtonKeyDown(event, index, quiz.title)}
             tabIndex={0}
             ref={(el) => buttonRefs.current[index] = el}
-            className={`flex items-center lg:text-2xl p-4 rounded-2xl bg-white dark:bg-[#3B4D66] shadow focus:outline-none ${
+            className={`flex items-center lg:text-2xl p-4 rounded-2xl bg-white dark:bg-[#3B4D66] shadow focus:purple-500 ${
               focusedIndex === index ? 'border-2 border-[#A729F5]' : ''
             }`}
           >
