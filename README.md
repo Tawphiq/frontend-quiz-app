@@ -1,4 +1,4 @@
-# AmaliTech - Frontend Quiz App Solution
+# Frontend Quiz App Solution
 
 This is a solution to the AmaliTech Frontend Quiz App Solution.
 
@@ -94,9 +94,5 @@ This project was my first time building an application with TypeScript. It was a
 
 - Website - [Mohammed Tawfiq Iddrisu](https://tawfiq-portfolio.vercel.app/)
 - LinkedIn - [Mohammed Tawfiq Iddrisu](https://www.linkedin.com/in/tawphiq/)
-
-## Acknowledgments
-
-I would like to thank AmaliTech for providing such a valuable oppportunity for learning and growth.
 
 ---
