@@ -1,6 +1,6 @@
 # Frontend Quiz App Solution
 
-This is a solution to the AmaliTech Frontend Quiz App Solution.
+This is a solution to the Frontend Quiz App Challenge from Frontend Mentor.
 
 ## Table of contents
 
